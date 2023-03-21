@@ -1,0 +1,11 @@
+<% if user_signed_in? %> 
+<h1 style="text-align:center">Hello, <%= current_user.first_name.capitalize%></h1>
+<h1 style="text-align:center">Welcome to the BookStore</h1>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: :sign_out2%>
+<% else %>
+<h1 style="text-align:center">Hi there, welcome to the BookStore</h1>
+<div>
+<a href="users/sign_in"><button type="button" class="sign_in">Sign in</button></a>
+<a href="users/sign_up"><button type="button" class="sign_out">Sign up</button></a>
+</div> 
+<% end %>
